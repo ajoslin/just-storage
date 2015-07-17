@@ -1,7 +1,5 @@
 'use strict'
-var window = require('global/window')
-
-var storage = hasNativeStorage() ?
+var storage = require('has-local-storage') ?
       require('./lib/native-storage') :
       require('./lib/memory-storage')
 
@@ -12,16 +10,4 @@ storage.forKey = function (key) {
   forKey.set = storage.set.bind(null, key)
 
   return forKey
-}
-
-function hasNativeStorage () {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    try {
-      var testKey = '__testKey'
-      window.localStorage.setItem(testKey, testKey)
-      window.localStorage.removeItem(testKey)
-      return true
-    } catch (e) {}
-  }
-  return false
 }
