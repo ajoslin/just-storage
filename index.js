@@ -2,7 +2,13 @@
 var memoryStore = {}
 var window = require('global/window')
 
-module.exports = hasNativeStorage() ? nativeStorage : memoryStorage
+var storage = hasNativeStorage() ? nativeStorage : memoryStorage
+
+module.exports = storage
+
+storage.forKey = function (key) {
+  return storage.bind(null, key)
+}
 
 function hasNativeStorage () {
   if (typeof window !== 'undefined' && window.localStorage) {

@@ -38,9 +38,17 @@ The key to save or load from storage.
 ##### value
 
 *Optional*
-Type: `string`
+Type: `any`
 
-If provided, will save `value` under `key`. If not provided, will load `key` and return its value.
+If given, will save `value` under `key` and return `value`. Otherwise, will load `key` and return its value.
+
+#### `justStorage.forKey(key)` -> `storageFn`
+
+##### storageFn([value])
+
+*Optional* Type: `any`
+
+If given, saves `value` under key and return `value`. Otherwise, will load `key` and return its value.
 
 ## License
 

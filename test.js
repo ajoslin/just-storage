@@ -22,3 +22,21 @@ test('save and load and delete object', function (t) {
   t.equal(storage('k'), undefined)
   t.end()
 })
+
+test('forKey save load and delete string', function (t) {
+  var colorStorage = storage.forKey('color')
+  t.equal(colorStorage('v'), 'v')
+  t.equal(colorStorage('v'), 'v')
+  colorStorage(null)
+  t.equal(colorStorage(), undefined)
+  t.end()
+})
+
+test('.forKey save and load and delete object', function (t) {
+  var colorStorage = storage.forKey('color')
+  t.deepEqual(colorStorage({ value: '2' }), { value: '2' })
+  t.deepEqual(colorStorage(), { value: '2' })
+  colorStorage(null)
+  t.equal(colorStorage(), undefined)
+  t.end()
+})
