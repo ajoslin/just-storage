@@ -10,7 +10,7 @@ Also does simple JSON stringify/parse for you.
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/just-storage)](https://saucelabs.com/u/just-storage)
 
-[![build status](https://secure.travis-ci.org/ajoslin/just-storage.png)](http://travis-ci.org/ajoslin/just-storage
+[![build status](https://secure.travis-ci.org/ajoslin/just-storage.png)](http://travis-ci.org/ajoslin/just-storage)
 
 ## Install
 
