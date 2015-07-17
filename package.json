@@ -1,7 +1,7 @@
 {
   "name": "just-storage",
   "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Just localStorage with memory fallback. Works in edge cases like Safari private browsing.",
   "license": "MIT",
   "repository": "ajoslin/just-storage",
