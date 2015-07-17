@@ -20,8 +20,12 @@ $ npm install --save just-storage
 ```js
 var storage = require('just-storage')
 
-storage('key', { some: 'value' }) // ==> saves { some: 'value' }
+storage('key', { some: 'value' }) // ==> saves and returns { some: 'value' }
 storage('key') // ==> { some: 'value' }
+
+var tokenStorage = storage('myJwt')
+tokenStorage() // ==> returns current value to 'myJwt'
+tokenStorage('19dk2924ksdf') // ==> saves new value to 'myJwt'
 ```
 
 ## API
