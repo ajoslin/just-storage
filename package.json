@@ -11,7 +11,8 @@
     "url": "ajoslin.com"
   },
   "scripts": {
-    "test": "standard && zuul -- test.js"
+    "test": "standard && zuul -- test.js",
+    "local-test": "standard && zuul --local 8181 -- test.js"
   },
   "keywords": [
     "just local storage private fallback"

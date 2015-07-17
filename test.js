@@ -15,7 +15,7 @@ test('save and load and delete object', function (t) {
   t.deepEqual(storage.set('k', { a: 1 }), { a: 1 })
   t.deepEqual(storage('k'), { a: 1 })
   storage.set('k', null)
-  t.ok(storage('k'), null)
+  t.equal(storage('k'), null)
   t.end()
 })
 
