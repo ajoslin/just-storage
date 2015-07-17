@@ -6,7 +6,7 @@ Just a simple localStorage module that checks for not only the existance of loca
 
 This implementation works in cases like Safari private browsing, where every call to localStorage throws a quota exceeded error.
 
-Also does simple JSON stringify/parse for you, as well.
+Also does simple JSON stringify/parse for you.
 
 ## Install
 
