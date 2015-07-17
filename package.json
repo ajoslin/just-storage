@@ -25,7 +25,8 @@
   },
   "files": [
     "index.js",
-    "lib"
+    "memory-storage.js",
+    "native-storage.js"
   ],
   "dependencies": {
     "global": "^4.3.0",

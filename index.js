@@ -1,7 +1,7 @@
 'use strict'
 var storage = require('has-local-storage') ?
-      require('./lib/native-storage') :
-      require('./lib/memory-storage')
+      require('./native-storage') :
+      require('./memory-storage')
 
 module.exports = storage
 
