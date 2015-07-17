@@ -51,7 +51,7 @@ function memoryStorage (key, value) {
   if (arguments.length === 1) {
     value = memoryStore[key]
 
-  } else if (value == null || typeof value === 'undefined') {
+  } else if (value == null) {
     delete memoryStore[key]
 
   } else {
