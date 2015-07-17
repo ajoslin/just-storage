@@ -24,7 +24,7 @@ storage('key', { some: 'value' }) // ==> saves and returns { some: 'value' }
 storage('key') // ==> { some: 'value' }
 
 var tokenStorage = storage.forKey('myJwt')
-tokenStorage() // ==> returns current value to 'myJwt'
+tokenStorage() // ==> returns current value of 'myJwt'
 tokenStorage('19dk2924ksdf') // ==> saves new value to 'myJwt'
 ```
 
