@@ -11,7 +11,7 @@
     "url": "ajoslin.com"
   },
   "scripts": {
-    "test": "standard && tape test.js"
+    "test": "standard && zuul -- test.js"
   },
   "keywords": [
     "just local storage private fallback"
@@ -19,10 +19,12 @@
   "devDependencies": {
     "node-localstorage": "^0.5.1",
     "standard": "^4.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "zuul": "^3.2.0"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "lib"
   ],
   "dependencies": {
     "global": "^4.3.0"

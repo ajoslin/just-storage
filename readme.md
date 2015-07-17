@@ -8,6 +8,10 @@ This implementation works in cases like Safari private browsing, where every cal
 
 Also does simple JSON stringify/parse for you.
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/just-storage)](https://saucelabs.com/u/just-storage)
+
+[![build status](https://secure.travis-ci.org/ajoslin/just-storage.png)](http://travis-ci.org/ajoslin/just-storage
+
 ## Install
 
 ```
@@ -20,45 +24,56 @@ $ npm install --save just-storage
 ```js
 var storage = require('just-storage')
 
-storage('key', { some: 'value' }) // ==> saves and returns { some: 'value' }
+storage.set('key', { some: 'value' }) // ==> saves and returns { some: 'value' }
 storage('key') // ==> { some: 'value' }
 
 var tokenStorage = storage.forKey('myJwt')
 tokenStorage() // ==> returns current value of 'myJwt'
-tokenStorage('19dk2924ksdf') // ==> saves new value to 'myJwt'
+tokenStorage.set('19dk2924ksdf') // ==> saves new value to 'myJwt'
 ```
 
 ## API
 
-#### `justStorage(key, [value])` -> `value`
+#### `justStorage(key)` -> `value`
+
+##### key
+
+*Required*
+Type: `string`
+
+The key to load from storage.
+
+##### Returns value
+
+The value saved for key.
+
+#### `justStorage.set(key, value)` -> `value`
 
 ##### key
 
 *Required* `string`
 
-The key to save or load from storage.
+The key you're saving to.
 
 ##### value
 
-*Optional* `any`
+*Required* `any`
 
-If given, will save `value` under `key` and return `value`. Otherwise, will load `key` and return its value.
+The value you're saving for `key`.
 
-#### `justStorage.forKey(key)` -> `storageFn`
+#### `justStorage.forKey(key)` -> `keyStorageFn`
 
-##### key
+##### `keyStorageFn()` -> `value`
 
-*Required* `string`
+Returns current saved value for `key`
 
-The key to bind the returned storage function to.
+##### `keyStorageFn.set(value)` -> `value`
 
-##### Returns storageFn([value])
+##### value
 
-**value**
+*Required* `any`
 
-*Optional* `any`
-
-If given, saves `value` under key and return `value`. Otherwise, will load `key` and return its value.
+The value you're saving for `key`.
 
 ## License
 
