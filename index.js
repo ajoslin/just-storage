@@ -1,8 +1,10 @@
 'use strict'
-var memoryStore = {}
-var window = require('global/window')
 
-var storage = hasNativeStorage() ? nativeStorage : memoryStorage
+var hasNative = require('has-local-storage')
+var localStorage = require('global/window').localStorage
+var memoryStore = {}
+
+var storage = hasNative ? nativeStorage : memoryStorage
 
 module.exports = storage
 
@@ -10,22 +12,10 @@ storage.forKey = function (key) {
   return storage.bind(null, key)
 }
 
-function hasNativeStorage () {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    try {
-      var testKey = '__testKey'
-      window.localStorage.setItem(testKey, testKey)
-      window.localStorage.removeItem(testKey)
-      return true
-    } catch (e) {}
-  }
-  return false
-}
-
 function nativeStorage (key, value) {
   var savedValue
   if (arguments.length === 1) {
-    savedValue = window.localStorage.getItem(key)
+    savedValue = localStorage.getItem(key)
     try {
       value = JSON.parse(savedValue)
     } catch (e) {
@@ -33,7 +23,7 @@ function nativeStorage (key, value) {
     }
 
   } else if (value == null || typeof value === 'undefined') {
-    window.localStorage.removeItem(key)
+    localStorage.removeItem(key)
 
   } else {
     try {
@@ -41,7 +31,7 @@ function nativeStorage (key, value) {
     } catch (e) {
       savedValue = value
     }
-    window.localStorage.setItem(key, savedValue)
+    localStorage.setItem(key, savedValue)
   }
 
   return value
