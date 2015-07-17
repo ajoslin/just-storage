@@ -7,7 +7,7 @@ test('save load and delete string', function (t) {
   t.equal(storage.set('k', 'v'), 'v')
   t.equal(storage('k'), 'v')
   storage.set('k', null)
-  t.ok(storage('k') == null || storage('k') === undefined)
+  t.equal(storage('k'), null)
   t.end()
 })
 
@@ -15,7 +15,7 @@ test('save and load and delete object', function (t) {
   t.deepEqual(storage.set('k', { a: 1 }), { a: 1 })
   t.deepEqual(storage('k'), { a: 1 })
   storage.set('k', null)
-  t.ok(storage('k') == null || storage('k') === undefined)
+  t.ok(storage('k'), null)
   t.end()
 })
 
