@@ -23,7 +23,6 @@ function hasNativeStorage () {
 }
 
 function nativeStorage (key, value) {
-  console.log('native', key, value)
   var savedValue
   if (arguments.length === 1) {
     savedValue = window.localStorage.getItem(key)
