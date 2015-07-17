@@ -34,23 +34,27 @@ tokenStorage('19dk2924ksdf') // ==> saves new value to 'myJwt'
 
 ##### key
 
-*Required*
-Type: `string`
+*Required* `string`
 
 The key to save or load from storage.
 
 ##### value
 
-*Optional*
-Type: `any`
+*Optional* `any`
 
 If given, will save `value` under `key` and return `value`. Otherwise, will load `key` and return its value.
 
 #### `justStorage.forKey(key)` -> `storageFn`
 
-##### storageFn([value])
+##### key
 
-*Optional* Type: `any`
+*Required* `string`
+
+The key to bind the returned storage function to.
+
+##### Returns storageFn([value])
+
+*Optional* `any`
 
 If given, saves `value` under key and return `value`. Otherwise, will load `key` and return its value.
 
