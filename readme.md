@@ -54,6 +54,8 @@ The key to bind the returned storage function to.
 
 ##### Returns storageFn([value])
 
+**value**
+
 *Optional* `any`
 
 If given, saves `value` under key and return `value`. Otherwise, will load `key` and return its value.
