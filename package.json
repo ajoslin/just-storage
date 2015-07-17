@@ -25,6 +25,7 @@
     "index.js"
   ],
   "dependencies": {
-    "global": "^4.3.0"
+    "global": "^4.3.0",
+    "has-local-storage": "~1.0.0"
   }
 }
