@@ -2,7 +2,7 @@
 
 > Just localStorage with a memory fallback.
 
-Just a simple localStorage module that checks for not only the existance of localStorage, but also checks that localStorage is enabled in the current session.
+A barebones localStorage module that checks for not only the existance of localStorage, but also checks that localStorage is enabled in the current session. Falls back to memory storage if localStorage isn't supported.
 
 This implementation works in cases like Safari private browsing, where every call to localStorage throws a quota exceeded error.
 
