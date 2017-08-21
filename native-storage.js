@@ -1,13 +1,11 @@
-var localStorage = require('global/window').localStorage
-
 module.exports = get
 module.exports.set = set
 
 function get (key) {
-  if (!localStorage.hasOwnProperty(key)) {
+  if (!window.localStorage.hasOwnProperty(key)) {
     return null
   }
-  var savedValue = localStorage.getItem(key)
+  var savedValue = window.localStorage.getItem(key)
   try {
     return JSON.parse(savedValue)
   } catch (e) {
@@ -16,7 +14,7 @@ function get (key) {
 }
 function set (key, value) {
   if (value == null) {
-    localStorage.removeItem(key)
+    window.localStorage.removeItem(key)
     return null
   }
 
@@ -25,6 +23,6 @@ function set (key, value) {
   } catch (e) {
     savedValue = value
   }
-  localStorage.setItem(key, savedValue)
+  window.localStorage.setItem(key, savedValue)
   return value
 }

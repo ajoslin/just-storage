@@ -15,7 +15,13 @@
     "local-test": "standard && zuul --local 8181 -- test.js"
   },
   "keywords": [
-    "micro tiny browserify localstorage private browser safari"
+    "micro",
+    "tiny",
+    "browserify",
+    "localstorage",
+    "private",
+    "browser",
+    "safari"
   ],
   "devDependencies": {
     "standard": "^4.0.0",
